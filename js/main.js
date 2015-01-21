@@ -1,12 +1,3 @@
-
-// var site = $(window),
-//     siteX = site.width(),
-//     siteY = site.height();
-
-// var strips = $(".strip"),
-//     stripsN = strips.length;
-
-
 var resizeSequence = function () {
     var stageXmax = 740,
         stageYmax = 900;
@@ -50,17 +41,14 @@ var resizeSequence = function () {
 
 var positionStrips = function () {
     var site = $(window),
-    siteX = site.width(),
-    siteY = site.height();
+        siteX = site.width(),
+        siteY = site.height();
 
-var strips = $(".strip"),
-    stripsN = strips.length;
+    var strips = $(".strip"),
+        stripsN = strips.length;
 
     var xPos = 0,
         stripW = 0;
-
-    // console.log("there are " + stripsN + " strips");
-    // console.log("width of each will be " + Math.round(siteX / stripsN) + "px");
 
     strips.each(function(i, e) {
         stripW = Math.round(siteX / stripsN + 1);
@@ -76,25 +64,19 @@ var strips = $(".strip"),
 
 
 var toggleStrips = function(e) {
-    // var site = $(window),
-    //     siteX = site.width(),
-    //     siteY = site.height();
-
     
-
-    
-
     $(".js-strip-toggle").on("click touchstart", function() {
-
         var site = $(window),
-        siteX = site.width(),
-        siteY = site.height();
-var strips = $(".strip"),
-        stripsN = strips.length;
+            siteX = site.width(),
+            siteY = site.height();
 
-    var stripParent = $(".js-transition-overlay"),
-        stripEl = stripParent.find(".strip"),
-        stripW = Math.round(siteX / stripsN + 1);
+        var strips = $(".strip"),
+            stripsN = strips.length;
+
+        var stripParent = $(".js-transition-overlay"),
+            stripEl = stripParent.find(".strip"),
+            stripW = Math.round(siteX / stripsN + 1);
+
         function randsort(c) {
             var o = new Array();
             for (var i = 0; i < c; i++) {
@@ -110,33 +92,30 @@ var strips = $(".strip"),
         var r = randsort(c); // an array of the element indices in random order
 
         if(stripParent.attr("data-state") == "inactive") {
-            
             stripParent.attr("data-state", "active");
-
             stripEl.each(function(i) {
                 var e = $(this);
                 setTimeout(function(){
                     e.css({"clip": "rect(0px "+stripW+"px "+siteY+"px 0px)", visibility: "inherit"});
-                }, r[i]*10);
+                }, r[i]*2);
             });
+            $(".js-sequence").animate({opacity: 0}, 200);
         } else {
             stripParent.attr("data-state", "inactive");
-
             stripEl.each(function(i) {
                 var e = $(this);
                 setTimeout(function(){
                     e.css({"clip": "rect("+siteY+"px "+stripW+"px "+siteY+"px 0px)"});
-                }, r[i]*10);
+                }, r[i]*2);
             });
+            $(".js-sequence").animate({opacity: 1}, 400);
         }
-
     });
-
 }
 
 
-$(document).ready(function(){
 
+$(document).ready(function(){
     // Settings
     $('#experiment .js-sequence').jsMovie({
         sequence:       "loop_####.png",    // the #### will be replaced with 0001,0002,0003,...
@@ -157,14 +136,11 @@ $(document).ready(function(){
 
     // Toggle animation
     toggleStrips();
-
 });
 
 
 
 $(window).on("resize orientationchange", function() {
    resizeSequence();
-   //toggleStrips();
    positionStrips();
-   
 });
