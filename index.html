@@ -1,52 +1,73 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>   <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>      <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="PNG Sequencing : animating PNGs and shit">
+		<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+		<!-- <link rel="stylesheet/less" type="text/less" href="less/base.less"> -->
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
+		
+		<style type="text/css">
+			
+			/* 
+			** set default font-size to 10px 
+			** so we can use 'rem' measurements
+			*/
+			html {font-size: 10px;}
 
-    <title>PNG Sequencing</title>
-  </head>
+			h1 {
+				margin: 0;
+				height: 10rem; 
+				line-height: 10rem;
+				text-align: center;
+				font-size: 3rem;
+				font-weight: lighter;
+			}
 
-  <body>
+			#experiment {
+				width: 100vw;
+				height: calc(100vh - 10rem);
+				position: relative;
+				/*overflow: hidden;*/
+			}
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/bosworthco/png-sequencing">View on GitHub</a>
+			.js-sequence {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+			}
 
-          <h1 id="project_title">PNG Sequencing</h1>
-          <h2 id="project_tagline">animating PNGs and shit</h2>
+			.jsMovieFrame {
+				background-size: contain;
+			}
+		
+		</style>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/bosworthco/png-sequencing/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/bosworthco/png-sequencing/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+	</head>
+	<body>
+	<!--[if lt IE 7]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="png-sequencing" class="anchor" href="#png-sequencing" aria-hidden="true"><span class="octicon octicon-link"></span></a>png-sequencing</h1>
+	<h1>Animated PNG Sequence</h1>
 
-<p>animating PNGs and shit</p>
-      </section>
-    </div>
+	<section id="experiment">
+		<div class="js-sequence"></div>
+	</section>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">PNG Sequencing maintained by <a href="https://github.com/bosworthco">bosworthco</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+	
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jsmovie.1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 
-    
-
-  </body>
+	</body>
 </html>
