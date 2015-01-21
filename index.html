@@ -48,6 +48,58 @@
 
 			.jsMovieFrame {
 				background-size: contain;
+				-webkit-mask-image: -webkit-gradient(linear, left bottom, right bottom, 
+					color-stop(0.00,  rgba(0,0,0,1)),
+					color-stop(0.35,  rgba(0,0,0,1)),
+					color-stop(0.50,  rgba(0,0,0,1)),
+					color-stop(0.65,  rgba(0,0,0,1)),
+					color-stop(1.00,  rgba(0,0,0,1)));
+			}
+
+			.jsMovieFrame img {
+				
+			}
+
+			.js-transition-overlay {
+				left: 0;
+				top: 0;
+				position: absolute;
+				display: block;
+				height: 100%;
+				width: 100%;
+				z-index: -1;
+				overflow: hidden;
+			}
+
+			.js-transition-overlay[data-state="active"] {
+				z-index: 10;
+			}
+
+			.strip {
+				background: #161616;
+				height: 100vh;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1%;
+				overflow: hidden;
+				visibility: hidden;
+				transition: all .1s;
+				will-change: clip;
+			}
+
+			.js-strip-toggle {
+				  position: absolute;
+				  top: 5rem;
+				  left: 5rem;
+				  font-size: 1.2rem;
+				  font-weight: bold;
+				  background: rgb(29, 219, 209);
+				  height: 4rem;
+				  padding: 0 2rem;
+				  line-height: 4.2rem;
+				  cursor: pointer;
+				  z-index: 20;
 			}
 		
 		</style>
@@ -64,6 +116,90 @@
 		<div class="js-sequence"></div>
 	</section>
 
+	<div class="js-strip-toggle">Click Me!</div>
+	
+	<div class="js-transition-overlay" data-state="inactive">
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+		<div class="strip"></div>
+	</div>
 	
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jsmovie.1.4.4.min.js"></script>
